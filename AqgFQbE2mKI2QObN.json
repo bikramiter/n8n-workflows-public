@@ -1,0 +1,63 @@
+{
+  "createdAt": "2025-07-29T07:50:39.330Z",
+  "updatedAt": "2025-07-29T07:52:20.000Z",
+  "id": "AqgFQbE2mKI2QObN",
+  "name": "git-versioning-test",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "32ff6616-81c0-47a1-81f1-f8228a34105e",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = \"This is a public workflow - v1.\";\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "f1cf0591-aa0c-4e59-b500-47289c6bccbe",
+      "name": "Code"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": null,
+  "pinData": {},
+  "versionId": "1d1ff22c-4ed9-4bdc-8f8b-4273833ce465",
+  "triggerCount": 0,
+  "tags": [
+    {
+      "createdAt": "2025-07-29T07:51:36.728Z",
+      "updatedAt": "2025-07-29T07:51:36.728Z",
+      "id": "IUnKccYyBT73SOw5",
+      "name": "public"
+    }
+  ]
+}
